@@ -5,14 +5,17 @@ Using the credit card credit dataset from LendingClub, a peer-to-peer lending se
 
 ## Results
 
+Models 1-4 code can be found in [credit_risk_resampling.ipynb](https://github.com/zimmer3-iii/Credit_Risk_Analysis/blob/main/credit_risk_resampling.ipynb)
+Models 5-6 code can be found in [credit_risk_ensemble.ipynb](https://github.com/zimmer3-iii/Credit_Risk_Analysis/blob/main/credit_risk_ensemble.ipynb)
+
 ### Oversampling
 - `Accurarcy score:` 0.6620175698580149
 - `Confusion Matrix:` 
 
-|                   | `Predicted True`| `Predicted False`|
+|                   | `Predicted High`| `Predicted Low`  |
 | ----------------- |:---------------:| ----------------:|
-| `Actually True`   | 73              |               28 |
-| `Actually False`  | 6820            |            10284 |
+| `Actually High`   | 73              |               28 |
+| `Actually Low`    | 6820            |            10284 |
 
 - `Classification Report:`
 
@@ -26,10 +29,10 @@ Using the credit card credit dataset from LendingClub, a peer-to-peer lending se
 - `Accurarcy score:` 0.6568196079430206
 - `Confusion Matrix:` 
 
-|                   | `Predicted True`| `Predicted False`|
+|                   | `Predicted High`| `Predicted Low`  |
 | ----------------- |:---------------:| ----------------:|
-| `Actually True`   | 62              |               39 |
-| `Actually False`  | 5135            |            11969 |
+| `Actually High`   | 62              |               39 |
+| `Actually Low`    | 5135            |            11969 |
 
 - `Classification Report:`
 
@@ -43,10 +46,10 @@ Using the credit card credit dataset from LendingClub, a peer-to-peer lending se
 - `Accurarcy score:` 0.5447339051023905
 - `Confusion Matrix:` 
 
-|                   | `Predicted True`| `Predicted False`|
+|                   | `Predicted High`| `Predicted Low`  |
 | ----------------- |:---------------:| ----------------:|
-| `Actually True`   | 70              |               31 |
-| `Actually False`  | 10324           |            6780  |
+| `Actually High`   | 70              |               31 |
+| `Actually Low`    | 10324           |            6780  |
 
 - `Classification Report:`
 
@@ -60,10 +63,10 @@ Using the credit card credit dataset from LendingClub, a peer-to-peer lending se
 - `Accurarcy score:` 0.6778933652252035
 - `Confusion Matrix:` 
 
-|                   | `Predicted True`| `Predicted False`|
+|                   | `Predicted High`| `Predicted Low`  |
 | ----------------- |:---------------:| ----------------:|
-| `Actually True`   | 79              |               22 |
-| `Actually False`  | 7293            |            9811  |
+| `Actually High`   | 79              |               22 |
+| `Actually Low`    | 7293            |            9811  |
 
 - `Classification Report:`
 
@@ -77,10 +80,10 @@ Using the credit card credit dataset from LendingClub, a peer-to-peer lending se
 - `Accurarcy score:` 0.7885466545953005
 - `Confusion Matrix:` 
 
-|                   | `Predicted True`| `Predicted False`|
+|                   | `Predicted High`| `Predicted Low`  |
 | ----------------- |:---------------:| ----------------:|
-| `Actually True`   | 71              |               30 |
-| `Actually False`  | 2153            |            14951 |
+| `Actually High`   | 71              |               30 |
+| `Actually Low`    | 2153            |            14951 |
 
 - `Classification Report:`
 
@@ -94,10 +97,10 @@ Using the credit card credit dataset from LendingClub, a peer-to-peer lending se
 - `Accurarcy score:` 0.9316600714093861
 - `Confusion Matrix:` 
 
-|                   | `Predicted True`| `Predicted False`|
+|                   | `Predicted High`| `Predicted Low`  |
 | ----------------- |:---------------:| ----------------:|
-| `Actually True`   | 93              |               8  |
-| `Actually False`  | 983             |            16121 |
+| `Actually High`   | 93              |               8  |
+| `Actually Low`    | 983             |            16121 |
 
 - `Classification Report:`
 
@@ -106,3 +109,10 @@ Using the credit card credit dataset from LendingClub, a peer-to-peer lending se
 | `high_risk`       | 0.09 | 0.92 | 0.94 | 0.16 | 0.93 | 0.87 | 101   |
 | `low_risk`        | 1.00 | 0.94 | 0.92 | 0.97 | 0.93 | 0.87 | 17104 |
 | `avg / total`     | 0.99 | 0.94 | 0.92 | 0.97 | 0.93 | 0.87 | 17205 |
+
+## Summary
+
+The first 4 models don't really stand out that much from each other. They have accurarcy scores between 54% and 67%, and they predict around 80% of the high_risk applicates correctly. While flagging high_risks correctly is the main goal, these models achieved this by also saying roughly 50% of the low_risks were also high_risks.
+The random forest model has a 78% accurarcy score but that improvement only comes from predicting more of the low_risks correctly and doesn't really approve upon the other models for flagging high_risks correctly.
+The easy ensemble adaboost is probably the only model I would recommend. It has a 93% accurarcy but more important it predicts 92% of the high_risks correctly. The added bonus is that also got 94% of the low_risks correctly. 
+
