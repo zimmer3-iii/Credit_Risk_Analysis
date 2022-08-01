@@ -8,7 +8,9 @@ Using the credit card credit dataset from LendingClub, a peer-to-peer lending se
 #### Oversampling
 - Accurarcy score: 0.6620175698580149
 - Confusion Matrix: 
-|                   | `Predicted True`| `Predicted False`|
+
+
+| ----------------- | `Predicted True`| `Predicted False`|
 | ----------------- |:---------------:| ----------------:|
 | `Actually True`   | 73              |               28 |
 | `Actually False`  | 6820            |            10284 |
